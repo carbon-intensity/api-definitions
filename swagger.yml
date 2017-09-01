@@ -1,0 +1,89 @@
+swagger: "2.0"
+info:
+  description: ""
+  version: 0.1.0
+  title: National Grid Carbon Intensity
+  termsOfService: "https://carbonintensity.org.uk/terms"
+  contact:
+    email: "api@carbonintensity.org.uk"
+  license:
+    name: "CC BY 4.0"
+    url: "https://creativecommons.org/licenses/by/4.0/"
+host: 9zot0ysfl7.execute-api.eu-west-2.amazonaws.com
+basePath: /v0/carbonintensity/
+schemes:
+- https
+tags:
+- name: intensity
+  description: Forecast and actual carbon intensity data
+  externalDocs:
+    description: Methodology
+    url: http://carbonintensity.org.uk/methodology
+paths:
+  /national/{date}:
+    get:
+      tags:
+      - intensity
+      summary: Get national carbon intensity data for a single day
+      operationId: settlementDate
+      parameters:
+      - name: "date"
+        in: "path"
+        description: "Date in YYYY-MM-DD format, e.g. 2017-08-23"
+        required: true
+        type: string
+        format: date
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: "#/definitions/Intensities"
+        403:
+          description: Access forbidden
+        404:
+          description: Date not found
+      security:
+      - api_key: []
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: X-Api-Key
+    in: header
+definitions:
+  Intensities:
+    type: object
+    properties:
+      data:
+        type: array
+        items:
+          $ref: "#/definitions/Intensity"
+  Intensity:
+    type: object
+    properties:
+      settlementDate:
+        type: string
+        format: date
+        description: The period from 00:00 hours to 24:00 hours on each day. In the format YYYY-MM-DD.
+      settlementPeriod:
+        type: integer
+        format: int32
+        description: A period of 30 minutes beginning on the hour or the half-hour. An integer between 1 and 48.
+      timeFrom:
+        type: string
+        format: datetime
+        description: The beginning of the half hour settlement period. In the format YYYY-MM-DD and is the local time so either GMT(+0) or BST(+1) depending on Daylight Savings Time.
+      timeTo:
+        type: string
+        format: datetime
+        description: The end of the half hour settlement period. In the format YYYY-MM-DD and is the local time so either GMT(+0) or BST(+1) depending on Daylight Savings Time.
+      carbonOutturn:
+        type: string
+        description: The average outturn CO2 emission intensity or carbon intensity for the half hour settlement period with units gCO2-eq/kWh.
+      carbonForecast:
+        type: string
+        description: The average forecast CO2 emission intensity or carbon intensity for the half hour settlement period with units gCO2-eq/kWh.
+externalDocs:
+  description: About
+  url: https://carbonintensity.org.uk
