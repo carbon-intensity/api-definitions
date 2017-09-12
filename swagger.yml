@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   description: ""
-  version: 0.1.0
+  version: 1.0.0
   title: National Grid Carbon Intensity
   termsOfService: "https://carbonintensity.org.uk/terms"
   contact:
@@ -10,7 +10,7 @@ info:
     name: "CC BY 4.0"
     url: "https://creativecommons.org/licenses/by/4.0/"
 host: 9zot0ysfl7.execute-api.eu-west-2.amazonaws.com
-basePath: /v0/carbonintensity/
+basePath: /v0
 schemes:
 - https
 tags:
