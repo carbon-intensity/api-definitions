@@ -30,8 +30,6 @@ paths:
       responses:
         200: 
           $ref: "#/components/responses/Intensities"
-        404:
-          $ref: "#/components/responses/NotFound"
   /intensity/date/{date}:
     get:
       tags:
@@ -50,8 +48,8 @@ paths:
       responses:
         200: 
           $ref: "#/components/responses/Intensities"
-        404: 
-          $ref: "#/components/responses/NotFound"
+        400: 
+          $ref: "#/components/responses/BadDateFormat"
   /intensity/stats/{from}/{to}:
     get:
       tags:
@@ -78,8 +76,8 @@ paths:
       responses:
         200: 
           $ref: "#/components/responses/Statistics"
-        404: 
-          $ref: "#/components/responses/NotFound"
+        400: 
+          $ref: "#/components/responses/BadDateFormat"
 components:
   responses:
     Intensities:
@@ -94,6 +92,12 @@ components:
         application/json:
           schema:
             $ref: "#/components/schemas/StatisticArray"
+    BadDateFormat:
+      description: Incorrect date/time format supplied, or end may be before start.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorMessage"
     NotFound:
       description: Date not found
   schemas:
@@ -176,3 +180,16 @@ components:
               type: string
               description: How high the average value in this period is, compared to a longer-term average. Can be one of "very high", "high", "moderate", "low", or "very low".
               example: moderate
+    ErrorMessage:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              example: "400 Bad Request"
+              description: the HTTP error code produced
+            message:
+              type: string
+              example: "Please enter a valid start and end datetime in ISO8601 format 'YYYY-MM-DDThh:mm'"
