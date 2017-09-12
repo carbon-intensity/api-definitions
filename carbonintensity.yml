@@ -24,8 +24,6 @@ paths:
       tags:
       - Intensity
       summary: Get national carbon intensity data for today
-      produces:
-      - application/json
       operationId: getIntensityForToday
       responses:
         $ref: "#/components/responses/Intensities"
@@ -42,8 +40,6 @@ paths:
         required: true
         type: string
         format: date
-      produces:
-      - application/json
       responses:
         $ref: "#/components/responses/Intensities"
 components:
@@ -51,10 +47,10 @@ components:
     Intensities:
       200:
         description: Success
-        schema:
-          $ref: "#/definitions/Intensities"
-      403:
-        description: Access forbidden
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Intensities"
       404:
         description: Date not found
 definitions:
