@@ -26,7 +26,10 @@ paths:
       summary: Get national carbon intensity data for today
       operationId: getIntensityForToday
       responses:
-        $ref: "#/components/responses/Intensities"
+        200: 
+          $ref: "#/components/responses/Intensities"
+        404:
+          $ref: "#/components/responses/NotFound"
   /intensity/date/{date}:
     get:
       tags:
@@ -43,18 +46,20 @@ paths:
           format: date
           example: "2017-08-23"
       responses:
-        $ref: "#/components/responses/Intensities"
+        200: 
+          $ref: "#/components/responses/Intensities"
+        404: 
+          $ref: "#/components/responses/NotFound"
 components:
   responses:
     Intensities:
-      200:
-        description: Success
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Intensities"
-      404:
-        description: Date not found
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Intensities"
+    NotFound:
+      description: Date not found
   schemas:
     Intensities:
       type: object
