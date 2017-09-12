@@ -98,3 +98,45 @@ components:
               type: string
               description: How high the emission value is, compared to average. Can be one of "very high", "high", "moderate", "low", or "very low".
               example: "moderate"
+    StatisticArray:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatisticValue'
+    StatisticValue:
+      type: object
+      properties:
+        from:
+          type: string
+          format: datetime
+          example: '2017-09-12 00:30'
+          description: The beginning of the requested period. In the format YYYY-MM-DD HH:MM.
+        to:
+          type: string
+          format: datetime
+          example: '2017-09-12 01:00'
+          description: The beginning of the requested period. In the format YYYY-MM-DD HH:MM.
+        intensity:
+          type: object
+          properties:
+            max:
+              type: number
+              format: float
+              example: 292
+              description: The maxmimum CO2 emission intensity during the requested period in units of gCO2-eq/kWh. Future periods will use forecast data, past periods will use actual.
+            average:
+              type: number
+              format: float
+              example: 218
+              description: The average CO2 emission intensity during the requested period in units of gCO2-eq/kWh. Future periods will use forecast data, past periods will use actual.
+            min:
+              type: number
+              format: float
+              example: 143
+              description: The minimum CO2 emission intensity during the requested period in units of gCO2-eq/kWh. Future periods will use forecast data, past periods will use actual.
+            index:
+              type: string
+              description: How high the average value in this period is, compared to a longer-term average. Can be one of "very high", "high", "moderate", "low", or "very low".
+              example: moderate
