@@ -24,9 +24,9 @@ paths:
       tags:
       - Intensity
       summary: Get national carbon intensity data for today
-      operationId: dateToday
       produces:
       - application/json
+      operationId: getIntensityForToday
       responses:
         $ref: "#/components/responses/Intensities"
   /intensity/date/{date}:
@@ -34,7 +34,7 @@ paths:
       tags:
       - Intensity
       summary: Get national carbon intensity data for a single day
-      operationId: settlementDate
+      operationId: getIntensityForDate
       parameters:
       - name: "date"
         in: "path"
