@@ -34,12 +34,14 @@ paths:
       summary: Get national carbon intensity data for a single day
       operationId: getIntensityForDate
       parameters:
-      - name: "date"
-        in: "path"
+      - name: date
+        in: path
         description: "Date in YYYY-MM-DD format, e.g. 2017-08-23"
         required: true
-        type: string
-        format: date
+        schema:
+          type: string
+          format: date
+          example: "2017-08-23"
       responses:
         $ref: "#/components/responses/Intensities"
 components:
