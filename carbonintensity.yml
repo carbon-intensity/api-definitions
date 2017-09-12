@@ -16,13 +16,13 @@ servers:
 - url: https://9zot0ysfl7.execute-api.eu-west-2.amazonaws.com/v0
   description: Production API server
 tags:
-- name: intensity
+- name: Intensity
   description: Forecast and actual carbon intensity data
 paths:
   /intensity/date:
     get:
       tags:
-      - intensity
+      - Intensity
       summary: Get national carbon intensity data for today
       operationId: dateToday
       produces:
@@ -32,7 +32,7 @@ paths:
   /intensity/date/{date}:
     get:
       tags:
-      - intensity
+      - Intensity
       summary: Get national carbon intensity data for a single day
       operationId: settlementDate
       parameters:
