@@ -61,13 +61,6 @@ paths:
           description: Access forbidden
         404:
           description: Date not found
-      security:
-      - api_key: []
-securityDefinitions:
-  api_key:
-    type: apiKey
-    name: X-Api-Key
-    in: header
 definitions:
   Intensities:
     type: object
