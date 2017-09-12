@@ -72,28 +72,33 @@ definitions:
   Intensity:
     type: object
     properties:
-      settlementDate:
-        type: string
-        format: date
-        description: The period from 00:00 hours to 24:00 hours on each day. In the format YYYY-MM-DD.
-      settlementPeriod:
-        type: integer
-        format: int32
-        description: A period of 30 minutes beginning on the hour or the half-hour. An integer between 1 and 48.
-      timeFrom:
+      from:
         type: string
         format: datetime
-        description: The beginning of the half hour settlement period. In the format YYYY-MM-DD and is the local time so either GMT(+0) or BST(+1) depending on Daylight Savings Time.
-      timeTo:
+        example: "2017-09-12 00:30"
+        description: The beginning of the half hour settlement period. In the format YYYY-MM-DD HH:MM and is the local time so either GMT(+0) or BST(+1) depending on Daylight Savings Time.
+      to:
         type: string
         format: datetime
-        description: The end of the half hour settlement period. In the format YYYY-MM-DD and is the local time so either GMT(+0) or BST(+1) depending on Daylight Savings Time.
-      carbonOutturn:
-        type: string
-        description: The average outturn CO2 emission intensity or carbon intensity for the half hour settlement period with units gCO2-eq/kWh.
-      carbonForecast:
-        type: string
-        description: The average forecast CO2 emission intensity or carbon intensity for the half hour settlement period with units gCO2-eq/kWh.
+        example: "2017-09-12 01:00"
+        description: The end of the half hour settlement period. In the format YYYY-MM-DD HH:MM and is the local time so either GMT(+0) or BST(+1) depending on Daylight Savings Time.
+      intensity:
+        type: object
+        properties:
+          actual:
+            type: number
+            format: float
+            example: null
+            description: The average outturn CO2 emission intensity or carbon intensity for the half hour settlement period with units gCO2-eq/kWh. For future values, this will be null.
+          forecast:
+            type: number
+            format: float
+            example: 137.1
+            description: The average forecast CO2 emission intensity or carbon intensity for the half hour settlement period with units gCO2-eq/kWh.
+          index:
+            type: string
+            description: How high the emission value is, compared to average. Can be one of "very high", "high", "moderate", "low", or "very low".
+            example: "moderate"
 externalDocs:
   description: About
   url: https://carbonintensity.org.uk
