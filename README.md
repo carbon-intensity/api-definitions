@@ -1,3 +1,3 @@
-# api-definition
+# National Grid Carbon Intensity API Definition
 
-![OAS Validator](http://online.swagger.io/validator?url=https://raw.githubusercontent.com/carbon-intensity/api-definition/master/carbonintensity.yml)
+![Swagger validity](https://img.shields.io/swagger/valid/2.0/https/raw.githubusercontent.com/carbon-intensity/api-definitions/master/carbon-intensity.yml.svg)
