@@ -9,10 +9,9 @@ info:
   license:
     name: "CC BY 4.0"
     url: "https://creativecommons.org/licenses/by/4.0/"
-host: 9zot0ysfl7.execute-api.eu-west-2.amazonaws.com
-basePath: /v0
-schemes:
-- https
+servers:
+- url: https://9zot0ysfl7.execute-api.eu-west-2.amazonaws.com/v0
+  description: Production API server
 tags:
 - name: intensity
   description: Forecast and actual carbon intensity data
