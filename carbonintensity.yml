@@ -53,41 +53,41 @@ components:
               $ref: "#/components/schemas/Intensities"
       404:
         description: Date not found
-definitions:
-  Intensities:
-    type: object
-    properties:
-      data:
-        type: array
-        items:
-          $ref: "#/definitions/Intensity"
-  Intensity:
-    type: object
-    properties:
-      from:
-        type: string
-        format: datetime
-        example: "2017-09-12 00:30"
-        description: The beginning of the half hour settlement period. In the format YYYY-MM-DD HH:MM and is the local time so either GMT(+0) or BST(+1) depending on Daylight Savings Time.
-      to:
-        type: string
-        format: datetime
-        example: "2017-09-12 01:00"
-        description: The end of the half hour settlement period. In the format YYYY-MM-DD HH:MM and is the local time so either GMT(+0) or BST(+1) depending on Daylight Savings Time.
-      intensity:
-        type: object
-        properties:
-          actual:
-            type: number
-            format: float
-            example: null
-            description: The average outturn CO2 emission intensity or carbon intensity for the half hour settlement period with units gCO2-eq/kWh. For future values, this will be null.
-          forecast:
-            type: number
-            format: float
-            example: 137.1
-            description: The average forecast CO2 emission intensity or carbon intensity for the half hour settlement period with units gCO2-eq/kWh.
-          index:
-            type: string
-            description: How high the emission value is, compared to average. Can be one of "very high", "high", "moderate", "low", or "very low".
-            example: "moderate"
+  schemas:
+    Intensities:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Intensity"
+    Intensity:
+      type: object
+      properties:
+        from:
+          type: string
+          format: datetime
+          example: "2017-09-12 00:30"
+          description: The beginning of the half hour settlement period. In the format YYYY-MM-DD HH:MM and is the local time so either GMT(+0) or BST(+1) depending on Daylight Savings Time.
+        to:
+          type: string
+          format: datetime
+          example: "2017-09-12 01:00"
+          description: The end of the half hour settlement period. In the format YYYY-MM-DD HH:MM and is the local time so either GMT(+0) or BST(+1) depending on Daylight Savings Time.
+        intensity:
+          type: object
+          properties:
+            actual:
+              type: number
+              format: float
+              example: null
+              description: The average outturn CO2 emission intensity or carbon intensity for the half hour settlement period with units gCO2-eq/kWh. For future values, this will be null.
+            forecast:
+              type: number
+              format: float
+              example: 137.1
+              description: The average forecast CO2 emission intensity or carbon intensity for the half hour settlement period with units gCO2-eq/kWh.
+            index:
+              type: string
+              description: How high the emission value is, compared to average. Can be one of "very high", "high", "moderate", "low", or "very low".
+              example: "moderate"
