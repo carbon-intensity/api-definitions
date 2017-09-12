@@ -20,7 +20,24 @@ tags:
     description: Methodology
     url: http://carbonintensity.org.uk/methodology
 paths:
-  /national/{date}:
+  /intensity/date:
+    get:
+      tags:
+      - intensity
+      summary: Get national carbon intensity data for today
+      operationId: dateToday
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: "#/definitions/Intensities"
+        403:
+          description: Access forbidden
+        404:
+          description: Date not found
+  /intensity/date/{date}:
     get:
       tags:
       - intensity
