@@ -29,14 +29,7 @@ paths:
       produces:
       - application/json
       responses:
-        200:
-          description: Success
-          schema:
-            $ref: "#/definitions/Intensities"
-        403:
-          description: Access forbidden
-        404:
-          description: Date not found
+        $ref: "#/components/responses/Intensities"
   /intensity/date/{date}:
     get:
       tags:
@@ -53,14 +46,18 @@ paths:
       produces:
       - application/json
       responses:
-        200:
-          description: Success
-          schema:
-            $ref: "#/definitions/Intensities"
-        403:
-          description: Access forbidden
-        404:
-          description: Date not found
+        $ref: "#/components/responses/Intensities"
+components:
+  responses:
+    Intensities:
+      200:
+        description: Success
+        schema:
+          $ref: "#/definitions/Intensities"
+      403:
+        description: Access forbidden
+      404:
+        description: Date not found
 definitions:
   Intensities:
     type: object
