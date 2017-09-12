@@ -18,6 +18,8 @@ servers:
 tags:
 - name: Intensity
   description: Forecast and actual carbon intensity data
+- name: Statistics
+  description: Intensity statistics (min, max, average) over requested periods
 paths:
   /intensity/date:
     get:
@@ -50,6 +52,34 @@ paths:
           $ref: "#/components/responses/Intensities"
         404: 
           $ref: "#/components/responses/NotFound"
+  /intensity/stats/{from}/{to}:
+    get:
+      tags:
+      - Statistics
+      summary: Get emission statistics for a requested period
+      operationId: getStatsFromTo
+      parameters:
+      - name: from
+        in: path
+        description: "Start date and time in ISO8601 format, e.g. 2017-09-01T00:00Z"
+        required: true
+        schema:
+          type: string
+          format: datetime
+          example: "2017-09-01T00:00Z"
+      - name: to
+        in: path
+        description: "End date and time in ISO8601 format, e.g. 2017-09-02T12:00Z"
+        required: true
+        schema:
+          type: string
+          format: datetime
+          example: "2017-09-02T12:00Z"
+      responses:
+        200: 
+          $ref: "#/components/responses/Statistics"
+        404: 
+          $ref: "#/components/responses/NotFound"
 components:
   responses:
     Intensities:
@@ -58,6 +88,12 @@ components:
         application/json:
           schema:
             $ref: "#/components/schemas/IntensityArray"
+    Statistics:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/StatisticArray"
     NotFound:
       description: Date not found
   schemas:
