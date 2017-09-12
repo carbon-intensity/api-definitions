@@ -9,15 +9,15 @@ info:
   license:
     name: "CC BY 4.0"
     url: "https://creativecommons.org/licenses/by/4.0/"
+externalDocs:
+  description: Documentation & methodology
+  url: http://carbonintensity.org.uk/methodology
 servers:
 - url: https://9zot0ysfl7.execute-api.eu-west-2.amazonaws.com/v0
   description: Production API server
 tags:
 - name: intensity
   description: Forecast and actual carbon intensity data
-  externalDocs:
-    description: Methodology
-    url: http://carbonintensity.org.uk/methodology
 paths:
   /intensity/date:
     get:
@@ -95,6 +95,3 @@ definitions:
             type: string
             description: How high the emission value is, compared to average. Can be one of "very high", "high", "moderate", "low", or "very low".
             example: "moderate"
-externalDocs:
-  description: About
-  url: https://carbonintensity.org.uk
