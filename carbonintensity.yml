@@ -57,18 +57,18 @@ components:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Intensities"
+            $ref: "#/components/schemas/IntensityArray"
     NotFound:
       description: Date not found
   schemas:
-    Intensities:
-      type: object
+    IntensityArray:
+      type: object 
       properties:
         data:
           type: array
           items:
-            $ref: "#/components/schemas/Intensity"
-    Intensity:
+            $ref: "#/components/schemas/IntensityValue"
+    IntensityValue:
       type: object
       properties:
         from:
