@@ -1,0 +1,412 @@
+swagger: '2.0'
+info:
+  version: '2017-09-12T21:36:08Z'
+  title: Carbon_Intensity
+host: 9zot0ysfl7.execute-api.eu-west-2.amazonaws.com
+basePath: /v0/intensity
+schemes:
+  - https
+paths:
+  /intensity:
+    get:
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            $ref: '#/definitions/Empty'
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '400':
+          description: 400 response
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: 500 response
+          schema:
+            $ref: '#/definitions/Error'
+  /intensity/date:
+    get:
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            $ref: '#/definitions/Empty'
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '400':
+          description: 400 response
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: 500 response
+          schema:
+            $ref: '#/definitions/Error'
+  '/intensity/date/{settlementDate}':
+    get:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: settlementDate
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            $ref: '#/definitions/resultDate'
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '400':
+          description: 400 response
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: 500 response
+          schema:
+            $ref: '#/definitions/Error'
+  '/intensity/date/{settlementDate}/{settlementPeriod}':
+    get:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: settlementDate
+          in: path
+          required: true
+          type: string
+        - name: settlementPeriod
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            $ref: '#/definitions/resultDatePeriod'
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '400':
+          description: 400 response
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: 500 response
+          schema:
+            $ref: '#/definitions/Error'
+  '/intensity/stats/{timeStart}/pt24h':
+    get:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: timeStart
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            $ref: '#/definitions/resultStats'
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '400':
+          description: 400 response
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: 500 response
+          schema:
+            $ref: '#/definitions/Error'
+  '/intensity/stats/{timeStart}/{timeEnd}':
+    get:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: timeStart
+          in: path
+          required: true
+          type: string
+        - name: timeEnd
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            $ref: '#/definitions/resultStats'
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '400':
+          description: 400 response
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: 500 response
+          schema:
+            $ref: '#/definitions/Error'
+  '/intensity/{timeStart}':
+    get:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: timeStart
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            $ref: '#/definitions/resultTime'
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '400':
+          description: 400 response
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: 500 response
+          schema:
+            $ref: '#/definitions/Error'
+  '/intensity/{timeStart}/fw24h':
+    get:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: timeStart
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            $ref: '#/definitions/resultTime'
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '400':
+          description: 400 response
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: 500 response
+          schema:
+            $ref: '#/definitions/Error'
+  '/intensity/{timeStart}/fw48h':
+    get:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: timeStart
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            $ref: '#/definitions/resultTime'
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '400':
+          description: 400 response
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: 500 response
+          schema:
+            $ref: '#/definitions/Error'
+  '/intensity/{timeStart}/pt24h':
+    get:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: timeStart
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            $ref: '#/definitions/resultTime'
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '400':
+          description: 400 response
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: 500 response
+          schema:
+            $ref: '#/definitions/Error'
+  '/intensity/{timeStart}/{timeEnd}':
+    get:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: timeStart
+          in: path
+          required: true
+          type: string
+        - name: timeEnd
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            $ref: '#/definitions/resultTimeSE'
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '400':
+          description: 400 response
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: 500 response
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  resultTime:
+    type: object
+    properties:
+      input:
+        $ref: '#/definitions/inputTime'
+      output:
+        $ref: '#/definitions/output'
+    title: resultTime
+  resultTimeSE:
+    type: object
+    properties:
+      input:
+        $ref: '#/definitions/inputTimeSE'
+      output:
+        $ref: '#/definitions/output'
+    title: resulttimeSE
+  Error:
+    type: object
+    properties:
+      message:
+        type: string
+    title: Error Schema
+  resultDate:
+    type: object
+    properties:
+      input:
+        $ref: '#/definitions/inputDate'
+      output:
+        $ref: '#/definitions/output'
+    title: resultDate
+  inputTime:
+    type: object
+    properties:
+      timeStart:
+        type: string
+    title: inputTime
+  outputStats:
+    type: object
+    properties:
+      timeFrom:
+        type: string
+      timeTo:
+        type: string
+      max:
+        type: number
+      average:
+        type: number
+      min:
+        type: number
+      index:
+        type: string
+    title: outputStats
+  inputDate:
+    type: object
+    properties:
+      settlementDate:
+        type: string
+    title: inputDate
+  output:
+    type: object
+    properties:
+      timeFrom:
+        type: string
+      timeTo:
+        type: string
+      forecast:
+        type: number
+      actual:
+        type: number
+      index:
+        type: string
+    title: output
+  resultStats:
+    type: object
+    properties:
+      input:
+        $ref: '#/definitions/inputTimeSE'
+      output:
+        $ref: '#/definitions/outputStats'
+    title: resultStats
+  Empty:
+    type: object
+    title: Empty Schema
+  inputTimeSE:
+    type: object
+    properties:
+      timeStart:
+        type: string
+      timeEnd:
+        type: string
+    title: inputTimeSE
+  inputDatePeriod:
+    type: object
+    properties:
+      settlementDate:
+        type: string
+      settlementPeriod:
+        type: number
+    title: inputDatePeriod
+  resultDatePeriod:
+    type: object
+    properties:
+      input:
+        $ref: '#/definitions/inputDatePeriod'
+      output:
+        $ref: '#/definitions/output'
+    title: resultDatePeriod
