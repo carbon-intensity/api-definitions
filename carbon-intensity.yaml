@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  description: "This is the Official Carbon Intensity API for Great Britain developed by National Grid. You can find out more about Carbon Intensity at [https://carbonintensity.org.uk](https://carbonintensity.org.uk/). \n\n National Grid’s Carbon Intensity API provides an indicative trend of carbon intensity of the electricity system in Great Britain (GB) up to 48-hours ahead of real-time. It provides programmatic and timely access to both estimated and forecast carbon intensity data. It includes the CO2 emissions from all large metered power stations and interconnector imports, whilst accounting for national demand, embedded wind and solar generation. This report details the methodology behind the estimated and forecast carbon intensity data streams. \n\n It is important to note that these forecasts are likely to be less accurate than other forecasts produced by National Grid, since they include the confluence of uncertainties in demand, wind, solar, and the uncertainties in the forecasts for each fuel type (gas, coal, biomass, interconnectors etc.). This approach does not use Physical Notifications (PNs) of Balancing Mechanism (BM) units in its forecasts. This is to ensure that the commercial sensitivities surrounding the balancing market are maintained. However, this limits the potential accuracy of the forecast generation by fuel type data. "
+  description: "This is the Official Carbon Intensity API for Great Britain developed by National Grid. You can find out more about Carbon Intensity at [https://carbonintensity.org.uk](https://carbonintensity.org.uk/). \n\n National Grid’s Carbon Intensity API provides an indicative trend of carbon intensity of the electricity system in Great Britain (GB) up to 48-hours ahead of real-time. It provides programmatic and timely access to both estimated and forecast carbon intensity data. It includes the CO2 emissions from all large metered power stations and interconnector imports, whilst accounting for national demand, embedded wind and solar generation. This report details the methodology behind the estimated and forecast carbon intensity data streams. \n\n It is important to note that these forecasts are likely to be less accurate than other forecasts produced by National Grid, since they include the confluence of uncertainties in demand, wind, solar, and the uncertainties in the forecasts for each fuel type (gas, coal, biomass, interconnectors etc.). This approach does not use Physical Notifications (PNs) of Balancing Mechanism (BM) units in its forecasts. This is to ensure that the commercial sensitivities surrounding the balancing market are maintained."
   version: "1.0.0"
   title: "Carbon Intensity API"
   termsOfService: "https://carbonintensity.org.uk/terms/"
@@ -22,7 +22,7 @@ tags:
   description: "Carbon Intensity statistics"
   externalDocs:
     description: "Docs"
-    url: "https://carbonintensity.org.uk"
+    url: "https://carbonintensity/org.uk"
 schemes:
 - "https"
 
