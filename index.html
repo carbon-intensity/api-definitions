@@ -181,8 +181,8 @@ font-style: italic;
   <body>
   <h1>Carbon Intensity API</h1>
     <div class="app-desc"><p>This is the Official Carbon Intensity API for Great Britain developed by National Grid. You can find out more about Carbon Intensity at <a href="https://carbonintensity.org.uk/">https://carbonintensity.org.uk</a>.</p>
-<p>National Grid’s Carbon Intensity API provides an indicative trend of carbon intensity of the electricity system in Great Britain (GB) up to 48-hours ahead of real-time. It provides programmatic and timely access to both estimated and forecast carbon intensity data. It includes the CO2 emissions from all large metered power stations and interconnector imports, whilst accounting for national demand, embedded wind and solar generation. This report details the methodology behind the estimated and forecast carbon intensity data streams.</p>
-<p>It is important to note that these forecasts are likely to be less accurate than other forecasts produced by National Grid, since they include the confluence of uncertainties in demand, wind, solar, and the uncertainties in the forecasts for each fuel type (gas, coal, biomass, interconnectors etc.). This approach does not use Physical Notifications (PNs) of Balancing Mechanism (BM) units in its forecasts. This is to ensure that the commercial sensitivities surrounding the balancing market are maintained.</p>
+<p><b>Summary</b>
+National Grid’s Carbon Intensity API provides an indicative trend of carbon intensity of the electricity system in Great Britain (GB) up to 48-hours ahead of real-time. It provides programmatic and timely access to both forecast and estimated actual carbon intensity data. The Carbon Intensity forecast includes CO2 emissions related to electricity generation only. The forecast includes CO2 emissions from all large metered power stations, interconnector imports, transmission and distribution losses, and accounts for national electricity demand, embedded wind and solar generation.</p>
 </div>
     <div class="app-desc">More information: <a href=""></a></div>
     <div class="app-desc">Contact Info: <a href="carbonintenity@gmail.com">carbonintenity@gmail.com</a></div>
@@ -211,6 +211,7 @@ font-style: italic;
   </ul>
   <h4><a href="#Statistics">Statistics</a></h4>
   <ul>
+  <li><a href="#intensityStatsFromToBlockGet"><code><span class="http-method">get</span> /intensity/stats/{from}/{to}/{block}</code></a></li>
   <li><a href="#intensityStatsFromToGet"><code><span class="http-method">get</span> /intensity/stats/{from}/{to}</code></a></li>
   </ul>
 
@@ -765,6 +766,74 @@ font-style: italic;
   </div> <!-- method -->
   <hr/>
   <h1><a name="Statistics">Statistics</a></h1>
+  <div class="method"><a name="intensityStatsFromToBlockGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /intensity/stats/{from}/{to}/{block}</code></pre></div>
+    <div class="method-summary">Get block average Carbon Intensity statistics between from and to datetime (<span class="nickname">intensityStatsFromToBlockGet</span>)</div>
+    <div class="method-notes">Get block average Carbon Intensity statistics (average, max, mean) between from and to datetime. The maximum date range is limited to 30 days. The maximum block length is 24 hours. All times provided in UTC (+00:00).</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">from (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. '2017-08-25T12:35Z' </div><div class="param">to (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; End datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. '2017-08-26T17:00Z' </div><div class="param">block (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Block length in hours i.e. a block length of 2 hrs over a 24 hr period returns 12 items with the average, max, min for each 2 hr block e.g. 2017-08-26T17:00Z/2017-08-27T17:00Z/2 </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Statistics">Statistics</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "intensity" : {
+    "average" : 6.02745618307040320615897144307382404804229736328125,
+    "min" : 1.46581298050294517310021547018550336360931396484375,
+    "max" : 0.80082819046101150206595775671303272247314453125,
+    "index" : "aeiou"
+  },
+  "from" : "aeiou",
+  "to" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    200 response
+        <a href="#Statistics">Statistics</a>
+    <h4 class="field-label">400</h4>
+    400 response
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    500 response
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
   <div class="method"><a name="intensityStatsFromToGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
