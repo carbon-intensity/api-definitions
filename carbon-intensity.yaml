@@ -22,7 +22,7 @@ tags:
   description: "Carbon Intensity statistics"
   externalDocs:
     description: "Docs"
-    url: "https://carbonintensity/org.uk"
+    url: "https://carbonintensity.org.uk"
 schemes:
 - "https"
 
