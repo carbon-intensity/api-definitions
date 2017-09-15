@@ -1,448 +1,435 @@
-swagger: '2.0'
+---
+swagger: "2.0"
 info:
-  description: >-
-    This is the Official Carbon Intensity API for Great Britain developed by
-    National Grid. You can find out more about Carbon Intensity at
-    [https://carbonintensity.org.uk](https://carbonintensity.org.uk/). 
-
-     National Grid’s Carbon Intensity API provides an indicative trend of carbon intensity of the electricity system in Great Britain (GB) up to 48-hours ahead of real-time. It provides programmatic and timely access to both estimated and forecast carbon intensity data. It includes the CO2 emissions from all large metered power stations and interconnector imports, whilst accounting for national demand, embedded wind and solar generation. This report details the methodology behind the estimated and forecast carbon intensity data streams. 
-
-     It is important to note that these forecasts are likely to be less accurate than other forecasts produced by National Grid, since they include the confluence of uncertainties in demand, wind, solar, and the uncertainties in the forecasts for each fuel type (gas, coal, biomass, interconnectors etc.). This approach does not use Physical Notifications (PNs) of Balancing Mechanism (BM) units in its forecasts. This is to ensure that the commercial sensitivities surrounding the balancing market are maintained.
-  version: 1.0.0
-  title: Carbon Intensity API
-  termsOfService: 'https://carbonintensity.org.uk/terms/'
+  description: "This is the Official Carbon Intensity API for Great Britain developed by National Grid. You can find out more about Carbon Intensity at [https://carbonintensity.org.uk](https://carbonintensity.org.uk/). \n\n <b>Summary</b>\nNational Grid’s Carbon Intensity API provides an indicative trend of carbon intensity of the electricity system in Great Britain (GB) up to 48-hours ahead of real-time. It provides programmatic and timely access to both forecast and estimated actual carbon intensity data. The Carbon Intensity forecast includes CO2 emissions related to electricity generation only. The forecast includes CO2 emissions from all large metered power stations, interconnector imports, transmission and distribution losses, and accounts for national electricity demand, embedded wind and solar generation. "
+  version: "1.0.0"
+  title: "Carbon Intensity API"
+  termsOfService: "https://carbonintensity.org.uk/terms/"
   contact:
-    email: carbonintenity@gmail.com
+    email: "carbonintenity@gmail.com"
   license:
-    name: CC BY 4.0
-    url: 'https://creativecommons.org/licenses/by/4.0/'
-host: k1nehbcl85.execute-api.eu-west-2.amazonaws.com
-basePath: /v1
+    name: "CC BY 4.0"
+    url: "https://creativecommons.org/licenses/by/4.0/"
+host: "k1nehbcl85.execute-api.eu-west-2.amazonaws.com"
+basePath: "/v1"
 tags:
-  - name: intensity
-    description: Carbon Intensity data
-    externalDocs:
-      description: Docs
-      url: 'https://carbonintensity.org.uk'
-  - name: statistics
-    description: Carbon Intensity statistics
-    externalDocs:
-      description: Docs
-      url: 'https://carbonintensity/org.uk'
+- name: "intensity"
+  description: "Carbon Intensity data"
+  externalDocs:
+    description: "Docs"
+    url: "https://carbonintensity.org.uk"
+- name: "statistics"
+  description: "Carbon Intensity statistics"
+  externalDocs:
+    description: "Docs"
+    url: "https://carbonintensity/org.uk"
 schemes:
-  - https
+- "https"
+
 paths:
   /intensity:
     get:
       tags:
-        - intensity
-      summary: Get Carbon Intensity data for current half hour
-      description: >-
-        Get Carbon Intensity data for current half hour settlement period. All
-        times provided in UTC (+00:00).
+      - "intensity"
+      summary: "Get Carbon Intensity data for current half hour"
+      description: "Get Carbon Intensity data for current half hour settlement period. All times provided in UTC (+00:00)."
       produces:
-        - application/json
+      - "application/json"
       responses:
-        '200':
-          description: 200 response
+        200:
+          description: "200 response"
           schema:
-            $ref: '#/definitions/Intensity'
+            $ref: "#/definitions/Intensity"
           headers:
             Access-Control-Allow-Origin:
-              type: string
-        '400':
-          description: 400 response
+              type: "string"
+        400:
+          description: "400 response"
           schema:
-            $ref: '#/definitions/Error'
-        '500':
-          description: 500 response
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 response"
           schema:
-            $ref: '#/definitions/Error'
+            $ref: "#/definitions/Error"
   /intensity/date:
     get:
       tags:
-        - intensity
-      summary: Get Carbon Intensity data for today
-      description: 'Get Carbon Intensity data for today. All times provided in UTC (+00:00).'
+      - "intensity"
+      summary: "Get Carbon Intensity data for today"
+      description: "Get Carbon Intensity data for today. All times provided in UTC (+00:00)."
       produces:
-        - application/json
+      - "application/json"
       responses:
-        '200':
-          description: 200 response
+        200:
+          description: "200 response"
           schema:
-            $ref: '#/definitions/Intensity'
+            $ref: "#/definitions/Intensity"
           headers:
             Access-Control-Allow-Origin:
-              type: string
-        '400':
-          description: 400 response
+              type: "string"
+        400:
+          description: "400 response"
           schema:
-            $ref: '#/definitions/Error'
-        '500':
-          description: 500 response
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 response"
           schema:
-            $ref: '#/definitions/Error'
-  '/intensity/date/{date}':
+            $ref: "#/definitions/Error"
+  /intensity/date/{date}:
     get:
       tags:
-        - intensity
-      summary: Get Carbon Intensity data for specific date
-      description: >-
-        Get Carbon Intensity data for a specific date. All times provided in UTC
-        (+00:00).
+      - "intensity"
+      summary: "Get Carbon Intensity data for specific date"
+      description: "Get Carbon Intensity data for a specific date. All times provided in UTC (+00:00)."
       consumes:
-        - application/json
+      - "application/json"
       produces:
-        - application/json
+      - "application/json"
       parameters:
-        - name: date
-          in: path
-          description: Date in YYYY-MM-DD format e.g. 2017-08-25
-          required: true
-          type: string
+      - name: "date"
+        in: "path"
+        description: "Date in YYYY-MM-DD format e.g. 2017-08-25"
+        required: true
+        type: "string"
       responses:
-        '200':
-          description: 200 response
+        200:
+          description: "200 response"
           schema:
-            $ref: '#/definitions/Intensity'
-        '400':
-          description: 400 response
+            $ref: "#/definitions/Intensity"
+        400:
+          description: "400 response"
           schema:
-            $ref: '#/definitions/Error'
-        '500':
-          description: 500 response
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 response"
           schema:
-            $ref: '#/definitions/Error'
-  '/intensity/date/{date}/{period}':
+            $ref: "#/definitions/Error"
+  /intensity/date/{date}/{period}:
     get:
       tags:
-        - intensity
-      summary: Get Carbon Intensity data for specific date and period
-      description: >-
-        Get Carbon Intensity data for a specific date and half hour settlement
-        period. All times provided in UTC (+00:00).
+      - "intensity"
+      summary: "Get Carbon Intensity data for specific date and period"
+      description: "Get Carbon Intensity data for a specific date and half hour settlement period. All times provided in UTC (+00:00)."
       consumes:
-        - application/json
+      - "application/json"
       produces:
-        - application/json
+      - "application/json"
       parameters:
-        - name: date
-          in: path
-          description: Date in YYYY-MM-DD format e.g. 2017-08-25
-          required: true
-          type: string
-        - name: period
-          in: path
-          description: Half hour settlement period between 1-48 e.g. 42
-          required: true
-          type: string
+      - name: "date"
+        in: "path"
+        description: "Date in YYYY-MM-DD format e.g. 2017-08-25"
+        required: true
+        type: "string"
+      - name: "period"
+        in: "path"
+        description: "Half hour settlement period between 1-48 e.g. 42"
+        required: true
+        type: "string"
       responses:
-        '200':
-          description: 200 response
+        200:
+          description: "200 response"
           schema:
-            $ref: '#/definitions/Intensity'
-        '400':
-          description: 400 response
+            $ref: "#/definitions/Intensity"
+        400:
+          description: "400 response"
           schema:
-            $ref: '#/definitions/Error'
-        '500':
-          description: 500 response
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 response"
           schema:
-            $ref: '#/definitions/Error'
-  '/intensity/stats/{from}/{to}':
+            $ref: "#/definitions/Error"
+  /intensity/stats/{from}/{to}:
     get:
       tags:
-        - statistics
-      summary: Get Carbon Intensity statistics between from and to datetime
-      description: >-
-        Get Carbon Intensity statistics (average, max, mean) between from and to
-        datetime. The maximum date range is limited to 30 days. All times
-        provided in UTC (+00:00).
+      - "statistics"
+      summary: "Get Carbon Intensity statistics between from and to datetime"
+      description: "Get Carbon Intensity statistics (average, max, mean) between from and to datetime. The maximum date range is limited to 30 days. All times provided in UTC (+00:00)."
       consumes:
-        - application/json
+      - "application/json"
       produces:
-        - application/json
+      - "application/json"
       parameters:
-        - name: from
-          in: path
-          description: >-
-            Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g.
-            2017-08-25T12:35Z
-          required: true
-          type: string
-        - name: to
-          in: path
-          description: >-
-            End datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g.
-            2017-08-26T17:00Z
-          required: true
-          type: string
+      - name: "from"
+        in: "path"
+        description: "Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z"
+        required: true
+        type: "string"
+      - name: "to"
+        in: "path"
+        description: "End datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-26T17:00Z"
+        required: true
+        type: "string"
       responses:
-        '200':
-          description: 200 response
+        200:
+          description: "200 response"
           schema:
-            $ref: '#/definitions/Statistics'
-        '400':
-          description: 400 response
+            $ref: "#/definitions/Statistics"
+        400:
+          description: "400 response"
           schema:
-            $ref: '#/definitions/Error'
-        '500':
-          description: 500 response
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 response"
           schema:
-            $ref: '#/definitions/Error'
-  '/intensity/{from}':
+            $ref: "#/definitions/Error"
+  /intensity/stats/{from}/{to}/{block}:
     get:
       tags:
-        - intensity
-      summary: Get Carbon Intensity data for specific half hour period
-      description: >-
-        Get Carbon Intensity data for specific half hour period. All times
-        provided in UTC (+00:00).
+      - "statistics"
+      summary: "Get block average Carbon Intensity statistics between from and to datetime"
+      description: "Get block average Carbon Intensity statistics (average, max, mean) between from and to datetime. The maximum date range is limited to 30 days. The maximum block length is 24 hours. All times provided in UTC (+00:00)."
       consumes:
-        - application/json
+      - "application/json"
       produces:
-        - application/json
+      - "application/json"
       parameters:
-        - name: from
-          in: path
-          description: >-
-            Datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g.
-            2017-08-25T12:35Z
-          required: true
-          type: string
+      - name: "from"
+        in: "path"
+        description: "Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. '2017-08-25T12:35Z'"
+        required: true
+        type: "string"
+      - name: "to"
+        in: "path"
+        description: "End datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. '2017-08-26T17:00Z'"
+        required: true
+        type: "string"
+      - name: "block"
+        in: "path"
+        description: "Block length in hours i.e. a block length of 2 hrs over a 24 hr period returns 12 items with the average, max, min for each 2 hr block e.g. 2017-08-26T17:00Z/2017-08-27T17:00Z/2"
+        required: true
+        type: "string"
       responses:
-        '200':
-          description: 200 response
+        200:
+          description: "200 response"
           schema:
-            $ref: '#/definitions/Intensity'
-        '400':
-          description: 400 response
+            $ref: "#/definitions/Statistics"
+        400:
+          description: "400 response"
           schema:
-            $ref: '#/definitions/Error'
-        '500':
-          description: 500 response
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 response"
           schema:
-            $ref: '#/definitions/Error'
-  '/intensity/{from}/fw24h':
+            $ref: "#/definitions/Error"
+  /intensity/{from}:
     get:
       tags:
-        - intensity
-      summary: Get Carbon Intensity data 24hrs forwards from specific datetime
-      description: >-
-        Get Carbon Intensity data between the {from} datetime specified and
-        24hrs before. All times provided in UTC (+00:00).
+      - "intensity"
+      summary: "Get Carbon Intensity data for specific half hour period"
+      description: "Get Carbon Intensity data for specific half hour period. All times provided in UTC (+00:00)."
       consumes:
-        - application/json
+      - "application/json"
       produces:
-        - application/json
+      - "application/json"
       parameters:
-        - name: from
-          in: path
-          description: >-
-            Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g.
-            2017-08-25T12:35Z
-          required: true
-          type: string
+      - name: "from"
+        in: "path"
+        description: "Datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z"
+        required: true
+        type: "string"
       responses:
-        '200':
-          description: 200 response
+        200:
+          description: "200 response"
           schema:
-            $ref: '#/definitions/Intensity'
-        '400':
-          description: 400 response
+            $ref: "#/definitions/Intensity"
+        400:
+          description: "400 response"
           schema:
-            $ref: '#/definitions/Error'
-        '500':
-          description: 500 response
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 response"
           schema:
-            $ref: '#/definitions/Error'
-  '/intensity/{from}/fw48h':
+            $ref: "#/definitions/Error"
+  /intensity/{from}/fw24h:
     get:
       tags:
-        - intensity
-      summary: Get Carbon Intensity data 48hrs forwards from specific datetime
-      description: >-
-        Get Carbon Intensity data between the {from} datetime specified and
-        48hrs after. All times provided in UTC (+00:00).
+      - "intensity"
+      summary: "Get Carbon Intensity data 24hrs forwards from specific datetime"
+      description: "Get Carbon Intensity data between the {from} datetime specified and 24hrs before. All times provided in UTC (+00:00)."
       consumes:
-        - application/json
+      - "application/json"
       produces:
-        - application/json
+      - "application/json"
       parameters:
-        - name: from
-          in: path
-          description: >-
-            Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g.
-            2017-08-25T12:35Z
-          required: true
-          type: string
+      - name: "from"
+        in: "path"
+        description: "Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z"
+        required: true
+        type: "string"
       responses:
-        '200':
-          description: 200 response
+        200:
+          description: "200 response"
           schema:
-            $ref: '#/definitions/Intensity'
-        '400':
-          description: 400 response
+            $ref: "#/definitions/Intensity"
+        400:
+          description: "400 response"
           schema:
-            $ref: '#/definitions/Error'
-        '500':
-          description: 500 response
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 response"
           schema:
-            $ref: '#/definitions/Error'
-  '/intensity/{from}/pt24h':
+            $ref: "#/definitions/Error"
+  /intensity/{from}/fw48h:
     get:
       tags:
-        - intensity
-      summary: Get Carbon Intensity data 24hrs in the past of a specific datetime
-      description: >-
-        Get Carbon Intensity data between the {from} datetime specified and
-        24hrs before. All times provided in UTC (+00:00).
+      - "intensity"
+      summary: "Get Carbon Intensity data 48hrs forwards from specific datetime"
+      description: "Get Carbon Intensity data between the {from} datetime specified and 48hrs after. All times provided in UTC (+00:00)."
       consumes:
-        - application/json
+      - "application/json"
       produces:
-        - application/json
+      - "application/json"
       parameters:
-        - name: from
-          in: path
-          description: >-
-            Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g.
-            2017-08-25T12:35Z
-          required: true
-          type: string
+      - name: "from"
+        in: "path"
+        description: "Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z"
+        required: true
+        type: "string"
       responses:
-        '200':
-          description: 200 response
+        200:
+          description: "200 response"
           schema:
-            $ref: '#/definitions/Intensity'
-        '400':
-          description: 400 response
+            $ref: "#/definitions/Intensity"
+        400:
+          description: "400 response"
           schema:
-            $ref: '#/definitions/Error'
-        '500':
-          description: 500 response
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 response"
           schema:
-            $ref: '#/definitions/Error'
-  '/intensity/{from}/{to}':
+            $ref: "#/definitions/Error"
+  /intensity/{from}/pt24h:
     get:
       tags:
-        - intensity
-      summary: Get Carbon Intensity data between from and to datetime
-      description: >-
-        Get Carbon Intensity data between the {from} and {to} datetimes. The
-        maximum date range is limited to 30 days. All times provided in UTC
-        (+00:00).
+      - "intensity"
+      summary: "Get Carbon Intensity data 24hrs in the past of a specific datetime"
+      description: "Get Carbon Intensity data between the {from} datetime specified and 24hrs before. All times provided in UTC (+00:00)."
       consumes:
-        - application/json
+      - "application/json"
       produces:
-        - application/json
+      - "application/json"
       parameters:
-        - name: from
-          in: path
-          description: >-
-            Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g.
-            2017-08-25T12:35Z
-          required: true
-          type: string
-        - name: to
-          in: path
-          description: >-
-            End datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g.
-            2017-08-25T12:35Z
-          required: true
-          type: string
+      - name: "from"
+        in: "path"
+        description: "Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z"
+        required: true
+        type: "string"
       responses:
-        '200':
-          description: 200 response
+        200:
+          description: "200 response"
           schema:
-            $ref: '#/definitions/Intensity'
-        '400':
-          description: 400 response
+            $ref: "#/definitions/Intensity"
+        400:
+          description: "400 response"
           schema:
-            $ref: '#/definitions/Error'
-        '500':
-          description: 500 response
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 response"
           schema:
-            $ref: '#/definitions/Error'
+            $ref: "#/definitions/Error"
+  /intensity/{from}/{to}:
+    get:
+      tags:
+      - "intensity"
+      summary: "Get Carbon Intensity data between from and to datetime"
+      description: "Get Carbon Intensity data between the {from} and {to} datetimes. The maximum date range is limited to 30 days. All times provided in UTC (+00:00)."
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "from"
+        in: "path"
+        description: "Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z"
+        required: true
+        type: "string"
+      - name: "to"
+        in: "path"
+        description: "End datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Intensity"
+        400:
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/Error"
 definitions:
   Intensity:
-    type: object
+    type: "object"
     properties:
       from:
-        type: string
-        description: >-
-          Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z.
-          All times provided in UTC (+00:00).
+        type: "string"
+        description: "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z.\
+          \ All times provided in UTC (+00:00)."
       to:
-        type: string
-        description: >-
-          Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z.
-          All times provided in UTC (+00:00).
+        type: "string"
+        description: "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z.\
+          \ All times provided in UTC (+00:00)."
       intensity:
-        type: object
+        type: "object"
         properties:
           forecast:
-            type: number
-            description: >-
-              The forecast Carbon Intensity for the half hour settlement period
-              in units gCO2-eq/kWh.
+            type: "number"
+            description: "The forecast Carbon Intensity for the half hour settlement\
+              \ period in units gCO2-eq/kWh."
           actual:
-            type: number
-            description: >-
-              The estimated actual Carbon Intensity for the half hour settlement
-              period in units gCO2-eq/kWh.
+            type: "number"
+            description: "The estimated actual Carbon Intensity for the half hour\
+              \ settlement period in units gCO2-eq/kWh."
           index:
-            type: string
-            description: >-
-              The index is a measure of the Carbon Intensity represented on a
-              scale between 'very low', 'low', 'moderate', 'high', 'very high'.
-    title: Intensity
+            type: "string"
+            description: "The index is a measure of the Carbon Intensity represented\
+              \ on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
+    title: "Intensity"
   Error:
-    type: object
+    type: "object"
     properties:
       code:
-        type: string
-        description: The HTTP error code produced.
+        type: "string"
+        description: "The HTTP error code produced."
       message:
-        type: string
-        description: The error message produced.
-    title: Error
+        type: "string"
+        description: "The error message produced."
+    title: "Error"
   Statistics:
-    type: object
+    type: "object"
     properties:
       from:
-        type: string
-        description: >-
-          Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z.
-          All times provided in UTC (+00:00).
+        type: "string"
+        description: "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z.\
+          \ All times provided in UTC (+00:00)."
       to:
-        type: string
-        description: >-
-          Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z.
-          All times provided in UTC (+00:00).
+        type: "string"
+        description: "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z.\
+          \ All times provided in UTC (+00:00)."
       intensity:
-        type: object
+        type: "object"
         properties:
           max:
-            type: number
-            description: >-
-              The maximum Carbon Intensity for the datetime range in units
-              gCO2-eq/kWh. Future periods use forecast data. Past data uses
-              actual data.
+            type: "number"
+            description: "The maximum Carbon Intensity for the datetime range in units\
+              \ gCO2-eq/kWh. Future periods use forecast data. Past data uses actual\
+              \ data."
           average:
-            type: number
-            description: >-
-              The average Carbon Intensity for the datetime range in units
-              gCO2-eq/kWh. Future periods use forecast data. Past data uses
-              actual data.
+            type: "number"
+            description: "The average Carbon Intensity for the datetime range in units\
+              \ gCO2-eq/kWh. Future periods use forecast data. Past data uses actual\
+              \ data."
           min:
-            type: number
-            description: >-
-              The maximum Carbon Intensity for the datetime range in units
-              gCO2-eq/kWh. Future periods use forecast data. Past data uses
-              actual data.
+            type: "number"
+            description: "The maximum Carbon Intensity for the datetime range in units\
+              \ gCO2-eq/kWh. Future periods use forecast data. Past data uses actual\
+              \ data."
           index:
-            type: string
-            description: >-
-              The index is a measure of the Carbon Intensity represented on a
-              scale between 'very low', 'low', 'moderate', 'high', 'very high'.
-    title: Intensity
+            type: "string"
+            description: "The index is a measure of the Carbon Intensity represented\
+              \ on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
+    title: "Intensity"
