@@ -1,5 +1,5 @@
 # Carbon Intensity API Definition
 
-![Swagger validity](https://img.shields.io/swagger/valid/2.0/https/raw.githubusercontent.com/carbon-intensity/api-definitions/master/carbon-intensity.yaml.svg)
+This repository contains the OpenAPI definition file for the National Grid Carbon Intensity API. 
 
-[Automagically generated Swagger documentation](https://carbon-intensity.github.io/api-definitions/)
+You can use this file to generate client code. Human-readable documentation can be found on the official [documentation website](https://carbon-intensity.github.io/api-definitions/).
