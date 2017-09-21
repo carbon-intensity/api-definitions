@@ -296,10 +296,9 @@
 <p>Scroll down for code samples and responses.</p>
 </blockquote>
 
-<p>This is the Official Carbon Intensity API for Great Britain developed by National Grid. You can find out more about Carbon Intensity at <a href="http://carbonintensity.org.uk/">http://carbonintensity.org.uk</a>. </p>
+<p><b>Introduction</b><br>This is the Official Carbon Intensity API for Great Britain developed by National Grid. You can find out more about Carbon Intensity at <a href="http://carbonintensity.org.uk/">http://carbonintensity.org.uk</a>. </p>
 
-<p><b>Summary</b>
-National Grid’s Carbon Intensity API provides an indicative trend of carbon intensity of the electricity system in Great Britain (GB) up to 48-hours ahead of real-time. It provides programmatic and timely access to both forecast and estimated actual carbon intensity data. The Carbon Intensity forecast includes CO2 emissions related to electricity generation only. The forecast includes CO2 emissions from all large metered power stations, interconnector imports, transmission and distribution losses, and accounts for national electricity demand, embedded wind and solar generation. </p>
+<p><b>Summary</b><br>National Grid’s Carbon Intensity API provides an indicative trend of carbon intensity of the electricity system in Great Britain (GB) up to 48-hours ahead of real-time. It provides programmatic and timely access to both forecast and estimated actual carbon intensity data. The Carbon Intensity forecast includes CO<sub>2</sub> emissions related to electricity generation only. The forecast includes CO<sub>2</sub> emissions from all large metered power stations, interconnector imports, transmission and distribution losses, and accounts for national electricity demand, embedded wind and solar generation. <br>The Carbon Intensity forecast is particularly sensitive to short-term forecast errors in demand, wind and solar generation, as this impacts the amount of disptachable generation that is required to meet demand. The forecast also makes use of historic generation data to make predictions about future generation, which invariably changes according to system conditions. It is therefore important to note that these forecasts are likely to be less accurate than forecasts such as electricity demand, since it includes the confluence of uncertainties from demand, wind, solar, and CO<sub>2</sub> emissions by fuel type. With these limitations in mind, the Carbon Intensity forecast should only be used as an indicative trend of carbon intensity over the next two days, and not a perfect forecast.</p>
 
 <p>Base URLs:</p>
 
@@ -311,9 +310,7 @@ National Grid’s Carbon Intensity API provides an indicative trend of carbon in
 Email: <a href="http://carbonintensity.org.uk/">Support</a>
 License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
 <h1 id='intensity'>intensity</h1>
-<p>Carbon Intensity data
-
-<a href="http://carbonintensity.org.uk">Docs</a></p>
+<p>Carbon Intensity data</p>
 <h2 id='get-intensity'>GET /intensity</h2>
 <blockquote>
 <p>Code samples</p>
@@ -1725,8 +1722,6 @@ This operation does not require authentication
 </aside>
 <h1 id='statistics'>statistics</h1>
 <p>Carbon Intensity statistics</p>
-
-<p><a href="https://carbonintensity.org.uk">Docs</a></p>
 <h2 id='get-intensity-stats-from-to'>GET /intensity/stats/{from}/{to}</h2>
 <blockquote>
 <p>Code samples</p>
@@ -2096,7 +2091,7 @@ This operation does not require authentication
 <td>intensity</td>
 <td>object</td>
 <td>false</td>
-<td>Intensity</td>
+<td>Carbon Intensity data (forecast, actual, index).</td>
 </tr>
 <tr>
 <td>» forecast</td>
@@ -2182,7 +2177,7 @@ This operation does not require authentication
 <td>intensity</td>
 <td>object</td>
 <td>false</td>
-<td>Index</td>
+<td>Carbon Intensity statistics (max, average, min, index).</td>
 </tr>
 <tr>
 <td>» max</td>
