@@ -1,6 +1,11 @@
 openapi: "3.0.0"
 info:
-  description: "This is the official Carbon Intensity API for Great Britain developed by National Grid. You can find out more about carbon intensity at [https://carbonintensity.org.uk](https://carbonintensity.org.uk/).<p>**Summary**</p> National Grid’s Carbon Intensity API provides an indicative trend of carbon intensity of the electricity system in Great Britain (GB) up to 48-hours ahead of real-time. It provides programmatic and timely access to both forecast and estimated actual carbon intensity data. The carbon intensity forecast includes CO2 emissions related to electricity generation only. The forecast includes CO2 emissions from all large metered power stations, interconnector imports, transmission and distribution losses, and accounts for national electricity demand, embedded wind and solar generation."
+  description: !!str |-
+    This is the official Carbon Intensity API for Great Britain developed by National Grid. You can find out more about carbon intensity at [https://carbonintensity.org.uk](https://carbonintensity.org.uk/).
+  
+    **Summary**
+    
+    National Grid’s Carbon Intensity API provides an indicative trend of carbon intensity of the electricity system in Great Britain (GB) up to 48-hours ahead of real-time. It provides programmatic and timely access to both forecast and estimated actual carbon intensity data. The carbon intensity forecast includes CO2 emissions related to electricity generation only. The forecast includes CO2 emissions from all large metered power stations, interconnector imports, transmission and distribution losses, and accounts for national electricity demand, embedded wind and solar generation.
   version: 1.0.0
   title: "Carbon Intensity API"
   termsOfService: "https://carbonintensity.org.uk/terms"
