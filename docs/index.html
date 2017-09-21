@@ -311,9 +311,9 @@ National Grid’s Carbon Intensity API provides an indicative trend of carbon in
 Email: <a href="http://carbonintensity.org.uk/">Support</a>
 License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
 <h1 id='intensity'>intensity</h1>
-<p>Carbon Intensity data</p>
+<p>Carbon Intensity data
 
-<p><a href="http://carbonintensity.org.uk">Docs</a></p>
+<a href="http://carbonintensity.org.uk">Docs</a></p>
 <h2 id='get-intensity'>GET /intensity</h2>
 <blockquote>
 <p>Code samples</p>
@@ -1973,7 +1973,7 @@ Accept: application/json
 </code></pre>
 <p><em>Get block average Carbon Intensity statistics between from and to datetime</em></p>
 
-<p>Get block average Carbon Intensity statistics (average, max, mean) between from and to datetime. The maximum date range is limited to 30 days. The maximum block length is 24 hours. All times provided in UTC (+00:00).</p>
+<p>Get block average Carbon Intensity statistics (average, max, mean) between from and to datetime. The maximum date range is limited to 30 days. The block length must be between 1 and 24 hours and should be an integer. All times provided in UTC (+00:00).</p>
 <h3 id='parameters-9'>Parameters</h3>
 <table><thead>
 <tr>
@@ -2096,19 +2096,19 @@ This operation does not require authentication
 <td>intensity</td>
 <td>object</td>
 <td>false</td>
-<td>No description</td>
+<td>Intensity</td>
 </tr>
 <tr>
 <td>» forecast</td>
 <td>number</td>
 <td>false</td>
-<td>The forecast Carbon Intensity for the half hour settlement period in units gCO2-eq/kWh.</td>
+<td>The forecast Carbon Intensity for the half hour settlement period in units gCO2/kWh.</td>
 </tr>
 <tr>
 <td>» actual</td>
 <td>number</td>
 <td>false</td>
-<td>The estimated actual Carbon Intensity for the half hour settlement period in units gCO2-eq/kWh.</td>
+<td>The estimated actual Carbon Intensity for the half hour settlement period in units gCO2/kWh.</td>
 </tr>
 <tr>
 <td>» index</td>
@@ -2182,25 +2182,25 @@ This operation does not require authentication
 <td>intensity</td>
 <td>object</td>
 <td>false</td>
-<td>No description</td>
+<td>Index</td>
 </tr>
 <tr>
 <td>» max</td>
 <td>number</td>
 <td>false</td>
-<td>The maximum Carbon Intensity for the datetime range in units gCO2-eq/kWh. Future periods use forecast data. Past data uses actual data.</td>
+<td>The maximum Carbon Intensity for the datetime range in units gCO2/kWh. Future periods use forecast data. Past data uses actual data.</td>
 </tr>
 <tr>
 <td>» average</td>
 <td>number</td>
 <td>false</td>
-<td>The average Carbon Intensity for the datetime range in units gCO2-eq/kWh. Future periods use forecast data. Past data uses actual data.</td>
+<td>The average Carbon Intensity for the datetime range in units gCO2/kWh. Future periods use forecast data. Past data uses actual data.</td>
 </tr>
 <tr>
 <td>» min</td>
 <td>number</td>
 <td>false</td>
-<td>The maximum Carbon Intensity for the datetime range in units gCO2-eq/kWh. Future periods use forecast data. Past data uses actual data.</td>
+<td>The maximum Carbon Intensity for the datetime range in units gCO2/kWh. Future periods use forecast data. Past data uses actual data.</td>
 </tr>
 <tr>
 <td>» index</td>
