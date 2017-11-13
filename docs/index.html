@@ -943,27 +943,6 @@ Accept: application/json
 <aside class="success">
 This operation does not require authentication
 </aside>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h2 id='get-intensity-factors'>GET /intensity/factors</h2>
 <blockquote>
 <p>Code samples</p>
@@ -1055,20 +1034,19 @@ Accept: application/json
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"Biomass"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"Coal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"intensity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"forecast"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"actual"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="s2">"Dutch Imports"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"French Imports"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Gas (Combined Cycle)"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Gas (Open Cycle)"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Hydro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Irish Imports"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Nuclear"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Oil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Other"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Pumped Storage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Solar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Wind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
+</span><span class="p">}</span><span class="w"> 
 </span></code></pre><h3 id='responses-2'>Responses</h3>
 <table><thead>
 <tr>
@@ -2329,7 +2307,19 @@ This operation does not require authentication
 <p><a name="schemafactors"></a></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"Biomass"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Coal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
+  </span><span class="s2">"Coal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Dutch Imports"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"French Imports"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Gas (Combined Cycle)"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Gas (Open Cycle)"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Hydro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Irish Imports"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Nuclear"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Oil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Other"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Pumped Storage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Solar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Wind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
 </span><span class="p">}</span><span class="w"> 
 </span></code></pre><h3 id='properties-2'>Properties</h3>
 <table><thead>
@@ -2344,13 +2334,85 @@ This operation does not require authentication
 <td>Biomass</td>
 <td>number</td>
 <td>false</td>
-<td>Carbon intensity factor gCO<sub>2</sub>sub>/kWh</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
 </tr>
 <tr>
 <td>Coal</td>
 <td>number</td>
 <td>false</td>
-<td>Carbon intensity factor gCO<sub>2</sub>sub>/kWh</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
+</tr>
+<tr>
+<td>Dutch Imports</td>
+<td>number</td>
+<td>false</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
+</tr>
+<tr>
+<td>French Imports</td>
+<td>number</td>
+<td>false</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
+</tr>
+<tr>
+<td>Gas (Combined Cycle)</td>
+<td>number</td>
+<td>false</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
+</tr>
+<tr>
+<td>Gas (Open Cycle)</td>
+<td>number</td>
+<td>false</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
+</tr>
+<tr>
+<td>Hydro</td>
+<td>number</td>
+<td>false</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
+</tr>
+<tr>
+<td>Irish Imports</td>
+<td>number</td>
+<td>false</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
+</tr>
+<tr>
+<td>Nuclear</td>
+<td>number</td>
+<td>false</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
+</tr>
+<tr>
+<td>Oil</td>
+<td>number</td>
+<td>false</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
+</tr>
+<tr>
+<td>Other</td>
+<td>number</td>
+<td>false</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
+</tr>
+<tr>
+<td>Pumped Storage</td>
+<td>number</td>
+<td>false</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
+</tr>
+<tr>
+<td>Solar</td>
+<td>number</td>
+<td>false</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
+</tr>
+<tr>
+<td>Wind</td>
+<td>number</td>
+<td>false</td>
+<td>Carbon intensity factor gCO<sub>2</sub>/kWh</td>
 </tr>
 
 
