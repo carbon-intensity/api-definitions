@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Carbon Intensity API v1.0.0</title>
+    <title>Carbon Intensity API v1.0.1</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -224,7 +224,7 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#carbon-intensity-api-v1-0-0" class="toc-h1 toc-link" data-title="Carbon Intensity API v1.0.0">Carbon Intensity API</a>
+            <a href="#carbon-intensity-api-v1-0-1" class="toc-h1 toc-link" data-title="Carbon Intensity API v1.0.1">Carbon Intensity API</a>
           </li>
           <li>
             <a href="#intensity" class="toc-h1 toc-link" data-title="intensity">intensity</a>
@@ -296,7 +296,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='carbon-intensity-api-v1-0-0'>Carbon Intensity API v1.0.0</h1>
+        <h1 id='carbon-intensity-api-v1-0-1'>Carbon Intensity API v1.0.1</h1>
 <blockquote>
 <p>Scroll down for code samples and responses.</p>
 </blockquote>
@@ -305,10 +305,16 @@
 
 <p><b>Summary</b><br>National Grid’s Carbon Intensity API provides an indicative trend of carbon intensity of the electricity system in Great Britain (GB) up to 48-hours ahead of real-time. It provides programmatic and timely access to both forecast and estimated actual carbon intensity data. The Carbon Intensity forecast includes CO<sub>2</sub> emissions related to electricity generation only. The includes emissions from all large metered power stations, interconnector imports, transmission and distribution losses, and accounts for national electricity demand, embedded wind and solar generation. <br>The Carbon Intensity forecast is particularly sensitive to short-term forecast errors in demand, wind and solar generation, as this impacts the amount of disptachable generation that is required to meet demand. The forecast also makes use of historic generation data to make predictions about future generation, which invariably changes according to system conditions. It is therefore important to note that these forecasts are likely to be less accurate than forecasts such as electricity demand, since it includes the confluence of uncertainties from demand, wind, solar, and CO<sub>2</sub> emissions by fuel type. With these limitations in mind, the Carbon Intensity forecast should only be used as an indicative trend of carbon intensity over the next two days, and not a perfect forecast.</p>
 
-<p>Base URLs:</p>
+<p>Base URL for JSON:</p>
 
 <ul>
 <li><a href="https://api.carbonintensity.org.uk">api.carbonintensity.org.uk</a></li>
+</ul>
+
+<p>Base URL for XML:</p>
+
+<ul>
+<li><a href="https://api.carbonintensity.org.uk/xml">api.carbonintensity.org.uk/xml</a></li>
 </ul>
 
 <p><a href="https://github.com/carbon-intensity/terms">Terms of Use</a>
@@ -1038,14 +1044,14 @@ Accept: application/json
   </span><span class="s2">"French Imports"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"Gas (Combined Cycle)"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"Gas (Open Cycle)"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Hydro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Irish Imports"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Nuclear"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Oil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Other"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Pumped Storage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Solar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Wind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
+  </span><span class="s2">"Hydro"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Irish Imports"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Nuclear"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Oil"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Pumped Storage"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Solar"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Wind"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w"> 
 </span></code></pre><h3 id='responses-2'>Responses</h3>
 <table><thead>
@@ -2274,20 +2280,20 @@ This operation does not require authentication
 <h2 id='factors'>Factors</h2>
 <p><a name="schemafactors"></a></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"Biomass"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Coal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Dutch Imports"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"French Imports"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Gas (Combined Cycle)"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Gas (Open Cycle)"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Hydro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Irish Imports"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Nuclear"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Oil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Other"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Pumped Storage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Solar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Wind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
+  </span><span class="s2">"Biomass"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Coal"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Dutch Imports"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"French Imports"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Gas (Combined Cycle)"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Gas (Open Cycle)"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Hydro"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Irish Imports"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Nuclear"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Oil"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Pumped Storage"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Solar"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Wind"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w"> 
 </span></code></pre><h3 id='properties-2'>Properties</h3>
 <table><thead>
