@@ -1,5 +1,6 @@
-# Carbon Intensity API Definition
+# Carbon Intensity API - Methodology
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-electricity.svg)](https://forthebadge.com)
 
-This repository contains the OpenAPI definition file for the National Grid Carbon Intensity API. 
+This is the Official Carbon Intensity repository for the [Carbon Intensity API](https://api.carbonintensity.org.uk/).
 
-You can use this file to generate client code. Human-readable documentation can be found on the official [documentation website](https://carbon-intensity.github.io/api-definitions/).
+Documentation for the API can be found on the Official [Documentation Website](http://docs.carbonintensity.org.uk).
