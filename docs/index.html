@@ -2883,11 +2883,11 @@ Accept: application/json
           <p>Code samples</p>
         </blockquote>
         <pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.carbonintensity.org.uk/intensity/generation/<span class="o">{</span>from<span class="o">}</span>/<span class="o"></span>pt24h<span class="o"></span><span class="o"></span><span class="o"></span> <span class="se">\</span>
+curl -X GET https://api.carbonintensity.org.uk/generation/<span class="o">{</span>from<span class="o">}</span>/<span class="o"></span>pt24h<span class="o"></span><span class="o"></span><span class="o"></span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
  
 </code></pre>
-        <pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://api.carbonintensity.org.uk/intensity/generation/{from}/pt24h</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+        <pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://api.carbonintensity.org.uk/generation/{from}/pt24h</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">api.carbonintensity.org.uk</span>
  
 Accept: application/json
@@ -2899,7 +2899,7 @@ Accept: application/json
 <span class="p">};</span>
  
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.carbonintensity.org.uk/intensity/generation/{from}/pt24h'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.carbonintensity.org.uk/generation/{from}/pt24h'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
  
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
@@ -2915,7 +2915,7 @@ Accept: application/json
  
 <span class="p">};</span>
  
-<span class="nx">fetch</span><span class="p">(</span><span class="s1">'https://api.carbonintensity.org.uk/intensity/generation/{from}/pt24h'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="s1">'https://api.carbonintensity.org.uk/generation/{from}/pt24h'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span>
  
@@ -2934,7 +2934,7 @@ Accept: application/json
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
  
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.carbonintensity.org.uk/intensity/generation/{from}/pt24h'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.carbonintensity.org.uk/generation/{from}/pt24h'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span><span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
  
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -2944,11 +2944,11 @@ Accept: application/json
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
  
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.carbonintensity.org.uk/intensity/generation/{from}/pt24h'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.carbonintensity.org.uk/generation/{from}/pt24h'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
  
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
-        <pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"https://api.carbonintensity.org.uk/intensity/generation/{from}/pt24h"</span><span class="o">);</span>
+        <pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"https://api.carbonintensity.org.uk/generation/{from}/pt24h"</span><span class="o">);</span>
 <span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -3095,11 +3095,11 @@ Accept: application/json
           <p>Code samples</p>
         </blockquote>
         <pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.carbonintensity.org.uk/intensity/generation/<span class="o">{</span>from<span class="o">}</span>/<span class="o">{</span>to<span class="o">}</span><span class="o"></span><span class="o"></span> <span class="se">\</span>
+curl -X GET https://api.carbonintensity.org.uk/generation/<span class="o">{</span>from<span class="o">}</span>/<span class="o">{</span>to<span class="o">}</span><span class="o"></span><span class="o"></span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
  
 </code></pre>
-        <pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://api.carbonintensity.org.uk/intensity/generation/{from}/{to}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+        <pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://api.carbonintensity.org.uk/generation/{from}/{to}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">api.carbonintensity.org.uk</span>
  
 Accept: application/json
@@ -3111,7 +3111,7 @@ Accept: application/json
 <span class="p">};</span>
  
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.carbonintensity.org.uk/intensity/generation/{from}/{to}'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.carbonintensity.org.uk/generation/{from}/{to}'</span><span class="p">,</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
  
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
@@ -3127,7 +3127,7 @@ Accept: application/json
  
 <span class="p">};</span>
  
-<span class="nx">fetch</span><span class="p">(</span><span class="s1">'https://api.carbonintensity.org.uk/intensity/generation/{from}/{to}'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="s1">'https://api.carbonintensity.org.uk/generation/{from}/{to}'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span>
  
@@ -3146,7 +3146,7 @@ Accept: application/json
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
  
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.carbonintensity.org.uk/intensity/generation/{from}/{to}</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.carbonintensity.org.uk/generation/{from}/{to}</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span><span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
  
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -3156,11 +3156,11 @@ Accept: application/json
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
  
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.carbonintensity.org.uk/intensity/generation/{from}/{to}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.carbonintensity.org.uk/generation/{from}/{to}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
  
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
-        <pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"https://api.carbonintensity.org.uk/intensity/generation/{from}/{to}"</span><span class="o">);</span>
+        <pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"https://api.carbonintensity.org.uk/generation/{from}/{to}"</span><span class="o">);</span>
 <span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
